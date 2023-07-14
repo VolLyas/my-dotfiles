@@ -1,7 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetBrainsMono Nerd Font;
-    font-size: 20px;
     font-weight: bold;
 }
 
@@ -40,11 +39,12 @@ button:hover {
 }
 
 #workspaces {
-    padding-right: 5px;
+    margin-right: 10px;
+    font-size: 25px;
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 14px 0 10px;
     background-color: transparent;
     color: #ffffff;
 }
@@ -79,7 +79,7 @@ button:hover {
 #tray,
 #mode,
 #scratchpad {
-    padding: 0 10px;
+    padding: 0 13px 0 10px;
     color: #ffffff;
 }
 
@@ -96,6 +96,10 @@ button:hover {
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
+}
+
+.modules-right {
+    font-size: 18px;
 }
 
 #clock {
