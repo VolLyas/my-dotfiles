@@ -3,8 +3,8 @@
     "position": "top",
     "height": 30,
     "spacing": 4, 
-    "modules-left": ["sway/workspaces", "custom/media"],
-    "modules-center": [],
+    "modules-left": ["custom/wlogout","sway/workspaces"],
+    "modules-center": ["custom/media"],
     "modules-right": ["tray", "pulseaudio", "sway/language", "network","clock"],
     "sway/workspaces": {
         "format": "{icon}",
@@ -25,34 +25,19 @@
         }
     },    
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 25,
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "󰥔 {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{cal}</small></tt>",
+        "on-click": "gsimplecal"
     },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "󰈀",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
+        "tooltip-format": "{ifname} via {gwaddr} 󰈀",
+        "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
@@ -72,18 +57,30 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-rightclick": "gsimplecal"
     },
     "custom/media": {
-        "format": "{icon} {}",
+        "format": " {icon} {}",
         "return-type": "json",
-        "max-length": 40,
         "format-icons": {
             "spotify": "",
+            "firefox": "󰈹",
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py"
+        "exec": "$HOME/.config/waybar/modules/mediaplayer.py",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl stop"
+    },
+    "custom/wlogout":{
+        "format":"󰣇",
+        "on-click": "wlogout -p layer-shell"
+    },
+    "sway/language": {
+        "format": "{flag}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
     }
 }
 

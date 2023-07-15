@@ -7,3 +7,12 @@ dconf
 nitrogen
 omf
 discord
+gtk-*
+cava/*
+Thunar/*
+xfce4/*
+pavucontrol.ini
+waybar/style.css
+GIMP
+ristretto
+mimeapps.list

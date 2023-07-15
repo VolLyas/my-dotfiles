@@ -5,23 +5,11 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+    background-color: transparent;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
-}
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+    background-color: transparent;
 }
 
 button {
@@ -50,7 +38,7 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: #2e3440;
 }
 
 #workspaces button.focused {
@@ -68,19 +56,17 @@ button:hover {
 }
 
 #clock,
-#cpu,
-#memory,
-#disk,
-#temperature,
+#tray,
 #network,
 #pulseaudio,
-#wireplumber,
+#language,
 #custom-media,
-#tray,
 #mode,
 #scratchpad {
     padding: 0 13px 0 10px;
-    color: #ffffff;
+    background-color: #64727D;
+    border-radius: 10px;
+    font-size: 20px;
 }
 
 #window,
@@ -100,54 +86,30 @@ button:hover {
 
 .modules-right {
     font-size: 18px;
+    background-color: #64727D;
+    border-radius: 0 0 0 25px;
+    padding-left: 18px;
 }
 
-#clock {
+.modules-left {
     background-color: #64727D;
+    border-radius: 0 0 25px 0;
+    padding-right: 18px;
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: #2e3440;
 }
 
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
-#network {
-    background-color: #2980b9;
-}
 
 #network.disconnected {
     background-color: #f53c3c;
 }
 
-#pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
-}
 
 #pulseaudio.muted {
     background-color: #90b1b1;
     color: #2a5c45;
-}
-
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
 }
 
 #wireplumber.muted {
@@ -155,29 +117,22 @@ label:focus {
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
+    background-color: #4c566a;
     min-width: 100px;
+    border-radius: 20px;
+    opacity: 0.65;
 }
 
 #custom-media.custom-spotify {
-    background-color: #66cc99;
+    background-color: #a3be8c;
 }
 
 #custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
+    background-color: #ebcb8b;
 }
 
 #tray {
-    background-color: #2980b9;
+    padding: 0 10px;
 }
 
 #tray > .passive {
@@ -189,18 +144,15 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
 #scratchpad {
-    background: rgba(0, 0, 0, 0.2);
+    background: #2e3440;
 }
 
 #scratchpad.empty {
 	background-color: transparent;
+}
+
+#custom-wlogout {
+    font-size: 30px;
+    padding: 0 15px 0 8px;
 }
